@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane
+        xmlns="http://javafx.com/javafx"
+        xmlns:fx="http://javafx.com/fxml/1"
+        fx:controller="za.ac.cput.stdregfrontend.ApplicantListController">
+
+    <top>
+        <VBox spacing="10">
+            <padding>
+                <Insets top="20" right="20" bottom="15" left="20"/>
+            </padding>
+
+            <Label
+                    text="Applicant Management"
+                    style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+
+            <HBox spacing="10">
+
+                <TextField
+                        fx:id="searchField"
+                        promptText="Search applicant..."
+                        prefWidth="350"/>
+
+                <Button
+                        text="Search"
+                        onAction="#onSearchClick"/>
+
+                <Button
+                        text="Refresh"
+                        onAction="#onRefreshClick"/>
+
+            </HBox>
+
+        </VBox>
+    </top>
+
+    <center>
+        <TableView
+                fx:id="applicantTable"
+                prefHeight="500">
+
+            <columns>
+
+                <TableColumn
+                        fx:id="personIdColumn"
+                        text="Person ID"
+                        prefWidth="100"/>
+
+                <TableColumn
+                        fx:id="applicantIdColumn"
+                        text="Applicant ID"
+                        prefWidth="110"/>
+
+                <TableColumn
+                        fx:id="firstNameColumn"
+                        text="First Name"
+                        prefWidth="150"/>
+
+                <TableColumn
+                        fx:id="lastNameColumn"
+                        text="Last Name"
+                        prefWidth="150"/>
+
+                <TableColumn
+                        fx:id="genderColumn"
+                        text="Gender"
+                        prefWidth="120"/>
+
+                <TableColumn
+                        fx:id="raceColumn"
+                        text="Race"
+                        prefWidth="150"/>
+
+            </columns>
+
+        </TableView>
+    </center>
+
+    <bottom>
+        <HBox
+                spacing="10"
+                alignment="CENTER_RIGHT">
+
+            <padding>
+                <Insets
+                        top="15"
+                        right="20"
+                        bottom="20"
+                        left="20"/>
+            </padding>
+
+            <Button
+                    text="Add Applicant"
+                    onAction="#onAddClick"/>
+
+            <Button
+                    text="View"
+                    onAction="#onViewClick"/>
+
+            <Button
+                    text="Delete"
+                    onAction="#onDeleteClick"/>
+
+            <Button
+                    text="Back"
+                    onAction="#onBackClick"/>
+
+        </HBox>
+    </bottom>
+
+</BorderPane>

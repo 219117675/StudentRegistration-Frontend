@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Pos?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="za.ac.cput.stdregfrontend.SplashController"
+      alignment="CENTER"
+      spacing="15"
+      prefWidth="1100"
+      prefHeight="700"
+      style="-fx-background-color: #1f2937;">
+
+    <Label text="STUDENT REGISTRATION SYSTEM"
+           style="-fx-text-fill: white;
+                  -fx-font-size: 32px;
+                  -fx-font-weight: bold;"/>
+
+    <Label text="Loading..."
+           style="-fx-text-fill: #d1d5db;
+                  -fx-font-size: 15px;"/>
+
+</VBox>

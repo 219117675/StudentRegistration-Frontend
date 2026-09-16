@@ -1,0 +1,634 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="za.ac.cput.stdregfrontend.StudentDetailsController"
+            prefWidth="900"
+            prefHeight="720"
+            style="-fx-background-color: #f5f7fa;">
+
+    <!-- ========================================================= -->
+    <!-- HEADER -->
+    <!-- ========================================================= -->
+
+    <top>
+
+        <HBox alignment="CENTER_LEFT"
+              spacing="15"
+              style="-fx-background-color: #1f2937;
+                     -fx-padding: 20 25 20 25;">
+
+            <VBox spacing="3">
+
+                <Label text="STUDENT DETAILS"
+                       style="-fx-text-fill: white;
+                              -fx-font-size: 24px;
+                              -fx-font-weight: bold;"/>
+
+                <Label text="Complete student profile"
+                       style="-fx-text-fill: #d1d5db;
+                              -fx-font-size: 13px;"/>
+
+            </VBox>
+
+            <Region HBox.hgrow="ALWAYS"/>
+
+            <Label text="STUDENT REGISTRATION SYSTEM"
+                   style="-fx-text-fill: #d1d5db;
+                          -fx-font-size: 12px;
+                          -fx-font-weight: bold;"/>
+
+        </HBox>
+
+    </top>
+
+
+    <!-- ========================================================= -->
+    <!-- CONTENT -->
+    <!-- ========================================================= -->
+
+    <center>
+
+        <ScrollPane fitToWidth="true"
+                    hbarPolicy="NEVER"
+                    style="-fx-background-color: transparent;
+                           -fx-background: transparent;">
+
+            <content>
+
+                <VBox spacing="20"
+                      style="-fx-padding: 25;">
+
+                    <!-- ================================================= -->
+                    <!-- PERSONAL INFORMATION -->
+                    <!-- ================================================= -->
+
+                    <VBox spacing="12"
+                          style="-fx-background-color: white;
+                                 -fx-background-radius: 8;
+                                 -fx-border-color: #e5e7eb;
+                                 -fx-border-radius: 8;
+                                 -fx-padding: 20;">
+
+                        <Label text="PERSONAL INFORMATION"
+                               style="-fx-font-size: 17px;
+                                      -fx-font-weight: bold;
+                                      -fx-text-fill: #111827;"/>
+
+                        <Label text="Basic information about the student"
+                               style="-fx-font-size: 12px;
+                                      -fx-text-fill: #6b7280;"/>
+
+                        <GridPane hgap="25"
+                                  vgap="14">
+
+                            <columnConstraints>
+
+                                <ColumnConstraints
+                                        percentWidth="25"/>
+
+                                <ColumnConstraints
+                                        percentWidth="25"/>
+
+                                <ColumnConstraints
+                                        percentWidth="25"/>
+
+                                <ColumnConstraints
+                                        percentWidth="25"/>
+
+                            </columnConstraints>
+
+
+                            <!-- Person ID -->
+
+                            <Label text="Person ID"
+                                   GridPane.rowIndex="0"
+                                   GridPane.columnIndex="0"
+                                   style="-fx-font-weight: bold;
+                                          -fx-text-fill: #6b7280;"/>
+
+                            <Label fx:id="personIdLabel"
+                                   text="Not provided"
+                                   GridPane.rowIndex="1"
+                                   GridPane.columnIndex="0"
+                                   style="-fx-text-fill: #111827;
+                                          -fx-font-size: 14px;"/>
+
+
+                            <!-- Student ID -->
+
+                            <Label text="Student ID"
+                                   GridPane.rowIndex="0"
+                                   GridPane.columnIndex="1"
+                                   style="-fx-font-weight: bold;
+                                          -fx-text-fill: #6b7280;"/>
+
+                            <Label fx:id="studentIdLabel"
+                                   text="Not provided"
+                                   GridPane.rowIndex="1"
+                                   GridPane.columnIndex="1"
+                                   style="-fx-text-fill: #111827;
+                                          -fx-font-size: 14px;"/>
+
+
+                            <!-- First Name -->
+
+                            <Label text="First Name"
+                                   GridPane.rowIndex="0"
+                                   GridPane.columnIndex="2"
+                                   style="-fx-font-weight: bold;
+                                          -fx-text-fill: #6b7280;"/>
+
+                            <Label fx:id="firstNameLabel"
+                                   text="Not provided"
+                                   GridPane.rowIndex="1"
+                                   GridPane.columnIndex="2"
+                                   style="-fx-text-fill: #111827;
+                                          -fx-font-size: 14px;"/>
+
+
+                            <!-- Last Name -->
+
+                            <Label text="Last Name"
+                                   GridPane.rowIndex="0"
+                                   GridPane.columnIndex="3"
+                                   style="-fx-font-weight: bold;
+                                          -fx-text-fill: #6b7280;"/>
+
+                            <Label fx:id="lastNameLabel"
+                                   text="Not provided"
+                                   GridPane.rowIndex="1"
+                                   GridPane.columnIndex="3"
+                                   style="-fx-text-fill: #111827;
+                                          -fx-font-size: 14px;"/>
+
+
+                            <!-- Date of Birth -->
+
+                            <Label text="Date of Birth"
+                                   GridPane.rowIndex="2"
+                                   GridPane.columnIndex="0"
+                                   style="-fx-font-weight: bold;
+                                          -fx-text-fill: #6b7280;"/>
+
+                            <Label fx:id="dateOfBirthLabel"
+                                   text="Not provided"
+                                   GridPane.rowIndex="3"
+                                   GridPane.columnIndex="0"
+                                   style="-fx-text-fill: #111827;
+                                          -fx-font-size: 14px;"/>
+
+
+                            <!-- Gender -->
+
+                            <Label text="Gender"
+                                   GridPane.rowIndex="2"
+                                   GridPane.columnIndex="1"
+                                   style="-fx-font-weight: bold;
+                                          -fx-text-fill: #6b7280;"/>
+
+                            <Label fx:id="genderLabel"
+                                   text="Not provided"
+                                   GridPane.rowIndex="3"
+                                   GridPane.columnIndex="1"
+                                   style="-fx-text-fill: #111827;
+                                          -fx-font-size: 14px;"/>
+
+
+                            <!-- Race -->
+
+                            <Label text="Race"
+                                   GridPane.rowIndex="2"
+                                   GridPane.columnIndex="2"
+                                   style="-fx-font-weight: bold;
+                                          -fx-text-fill: #6b7280;"/>
+
+                            <Label fx:id="raceLabel"
+                                   text="Not provided"
+                                   GridPane.rowIndex="3"
+                                   GridPane.columnIndex="2"
+                                   style="-fx-text-fill: #111827;
+                                          -fx-font-size: 14px;"/>
+
+                        </GridPane>
+
+                    </VBox>
+
+
+                    <!-- ================================================= -->
+                    <!-- STUDENT INFORMATION -->
+                    <!-- ================================================= -->
+
+                    <VBox spacing="12"
+                          style="-fx-background-color: white;
+                                 -fx-background-radius: 8;
+                                 -fx-border-color: #e5e7eb;
+                                 -fx-border-radius: 8;
+                                 -fx-padding: 20;">
+
+                        <Label text="STUDENT INFORMATION"
+                               style="-fx-font-size: 17px;
+                                      -fx-font-weight: bold;
+                                      -fx-text-fill: #111827;"/>
+
+                        <GridPane hgap="25"
+                                  vgap="14">
+
+                            <columnConstraints>
+
+                                <ColumnConstraints
+                                        percentWidth="25"/>
+
+                                <ColumnConstraints
+                                        percentWidth="25"/>
+
+                                <ColumnConstraints
+                                        percentWidth="25"/>
+
+                                <ColumnConstraints
+                                        percentWidth="25"/>
+
+                            </columnConstraints>
+
+
+                            <!-- Student Number -->
+
+                            <Label text="Student Number"
+                                   GridPane.rowIndex="0"
+                                   GridPane.columnIndex="0"
+                                   style="-fx-font-weight: bold;
+                                          -fx-text-fill: #6b7280;"/>
+
+                            <Label fx:id="studentNumberLabel"
+                                   text="Not provided"
+                                   GridPane.rowIndex="1"
+                                   GridPane.columnIndex="0"
+                                   style="-fx-text-fill: #111827;
+                                          -fx-font-size: 14px;
+                                          -fx-font-weight: bold;"/>
+
+
+                            <!-- Student Email -->
+
+                            <Label text="Student Email"
+                                   GridPane.rowIndex="0"
+                                   GridPane.columnIndex="1"
+                                   style="-fx-font-weight: bold;
+                                          -fx-text-fill: #6b7280;"/>
+
+                            <Label fx:id="studentEmailLabel"
+                                   text="Not provided"
+                                   wrapText="true"
+                                   GridPane.rowIndex="1"
+                                   GridPane.columnIndex="1"
+                                   style="-fx-text-fill: #111827;
+                                          -fx-font-size: 14px;"/>
+
+                        </GridPane>
+
+                    </VBox>
+
+
+                    <!-- ================================================= -->
+                    <!-- CONTACT INFORMATION -->
+                    <!-- ================================================= -->
+
+                    <VBox spacing="12"
+                          style="-fx-background-color: white;
+                                 -fx-background-radius: 8;
+                                 -fx-border-color: #e5e7eb;
+                                 -fx-border-radius: 8;
+                                 -fx-padding: 20;">
+
+                        <Label text="CONTACT INFORMATION"
+                               style="-fx-font-size: 17px;
+                                      -fx-font-weight: bold;
+                                      -fx-text-fill: #111827;"/>
+
+                        <GridPane hgap="25"
+                                  vgap="14">
+
+                            <columnConstraints>
+
+                                <ColumnConstraints
+                                        percentWidth="25"/>
+
+                                <ColumnConstraints
+                                        percentWidth="25"/>
+
+                                <ColumnConstraints
+                                        percentWidth="25"/>
+
+                                <ColumnConstraints
+                                        percentWidth="25"/>
+
+                            </columnConstraints>
+
+
+                            <!-- Contact Email -->
+
+                            <Label text="Email"
+                                   GridPane.rowIndex="0"
+                                   GridPane.columnIndex="0"
+                                   style="-fx-font-weight: bold;
+                                          -fx-text-fill: #6b7280;"/>
+
+                            <Label fx:id="contactEmailLabel"
+                                   text="Not provided"
+                                   wrapText="true"
+                                   GridPane.rowIndex="1"
+                                   GridPane.columnIndex="0"
+                                   style="-fx-text-fill: #111827;
+                                          -fx-font-size: 14px;"/>
+
+
+                            <!-- Phone -->
+
+                            <Label text="Phone Number"
+                                   GridPane.rowIndex="0"
+                                   GridPane.columnIndex="1"
+                                   style="-fx-font-weight: bold;
+                                          -fx-text-fill: #6b7280;"/>
+
+                            <Label fx:id="phoneNumberLabel"
+                                   text="Not provided"
+                                   GridPane.rowIndex="1"
+                                   GridPane.columnIndex="1"
+                                   style="-fx-text-fill: #111827;
+                                          -fx-font-size: 14px;"/>
+
+                        </GridPane>
+
+                    </VBox>
+
+
+                    <!-- ================================================= -->
+                    <!-- ADDRESS -->
+                    <!-- ================================================= -->
+
+                    <VBox spacing="12"
+                          style="-fx-background-color: white;
+                                 -fx-background-radius: 8;
+                                 -fx-border-color: #e5e7eb;
+                                 -fx-border-radius: 8;
+                                 -fx-padding: 20;">
+
+                        <Label text="ADDRESS"
+                               style="-fx-font-size: 17px;
+                                      -fx-font-weight: bold;
+                                      -fx-text-fill: #111827;"/>
+
+                        <GridPane hgap="25"
+                                  vgap="14">
+
+                            <columnConstraints>
+
+                                <ColumnConstraints
+                                        percentWidth="25"/>
+
+                                <ColumnConstraints
+                                        percentWidth="25"/>
+
+                                <ColumnConstraints
+                                        percentWidth="25"/>
+
+                                <ColumnConstraints
+                                        percentWidth="25"/>
+
+                            </columnConstraints>
+
+
+                            <!-- Street -->
+
+                            <Label text="Street"
+                                   GridPane.rowIndex="0"
+                                   GridPane.columnIndex="0"
+                                   style="-fx-font-weight: bold;
+                                          -fx-text-fill: #6b7280;"/>
+
+                            <Label fx:id="streetLabel"
+                                   text="Not provided"
+                                   wrapText="true"
+                                   GridPane.rowIndex="1"
+                                   GridPane.columnIndex="0"
+                                   style="-fx-text-fill: #111827;
+                                          -fx-font-size: 14px;"/>
+
+
+                            <!-- Suburb -->
+
+                            <Label text="Suburb"
+                                   GridPane.rowIndex="0"
+                                   GridPane.columnIndex="1"
+                                   style="-fx-font-weight: bold;
+                                          -fx-text-fill: #6b7280;"/>
+
+                            <Label fx:id="suburbLabel"
+                                   text="Not provided"
+                                   GridPane.rowIndex="1"
+                                   GridPane.columnIndex="1"
+                                   style="-fx-text-fill: #111827;
+                                          -fx-font-size: 14px;"/>
+
+
+                            <!-- City -->
+
+                            <Label text="City"
+                                   GridPane.rowIndex="0"
+                                   GridPane.columnIndex="2"
+                                   style="-fx-font-weight: bold;
+                                          -fx-text-fill: #6b7280;"/>
+
+                            <Label fx:id="cityLabel"
+                                   text="Not provided"
+                                   GridPane.rowIndex="1"
+                                   GridPane.columnIndex="2"
+                                   style="-fx-text-fill: #111827;
+                                          -fx-font-size: 14px;"/>
+
+
+                            <!-- Province -->
+
+                            <Label text="Province"
+                                   GridPane.rowIndex="0"
+                                   GridPane.columnIndex="3"
+                                   style="-fx-font-weight: bold;
+                                          -fx-text-fill: #6b7280;"/>
+
+                            <Label fx:id="provinceLabel"
+                                   text="Not provided"
+                                   GridPane.rowIndex="1"
+                                   GridPane.columnIndex="3"
+                                   style="-fx-text-fill: #111827;
+                                          -fx-font-size: 14px;"/>
+
+
+                            <!-- Postal Code -->
+
+                            <Label text="Postal Code"
+                                   GridPane.rowIndex="2"
+                                   GridPane.columnIndex="0"
+                                   style="-fx-font-weight: bold;
+                                          -fx-text-fill: #6b7280;"/>
+
+                            <Label fx:id="postalCodeLabel"
+                                   text="Not provided"
+                                   GridPane.rowIndex="3"
+                                   GridPane.columnIndex="0"
+                                   style="-fx-text-fill: #111827;
+                                          -fx-font-size: 14px;"/>
+
+                        </GridPane>
+
+                    </VBox>
+
+
+                    <!-- ================================================= -->
+                    <!-- ACADEMIC INFORMATION -->
+                    <!-- ================================================= -->
+
+                    <VBox spacing="12"
+                          style="-fx-background-color: white;
+                                 -fx-background-radius: 8;
+                                 -fx-border-color: #e5e7eb;
+                                 -fx-border-radius: 8;
+                                 -fx-padding: 20;">
+
+                        <Label text="ACADEMIC INFORMATION"
+                               style="-fx-font-size: 17px;
+                                      -fx-font-weight: bold;
+                                      -fx-text-fill: #111827;"/>
+
+                        <GridPane hgap="25"
+                                  vgap="14">
+
+                            <columnConstraints>
+
+                                <ColumnConstraints
+                                        percentWidth="25"/>
+
+                                <ColumnConstraints
+                                        percentWidth="25"/>
+
+                                <ColumnConstraints
+                                        percentWidth="25"/>
+
+                                <ColumnConstraints
+                                        percentWidth="25"/>
+
+                            </columnConstraints>
+
+
+                            <!-- Application -->
+
+                            <Label text="Application ID"
+                                   GridPane.rowIndex="0"
+                                   GridPane.columnIndex="0"
+                                   style="-fx-font-weight: bold;
+                                          -fx-text-fill: #6b7280;"/>
+
+                            <Label fx:id="applicationIdLabel"
+                                   text="No application"
+                                   GridPane.rowIndex="1"
+                                   GridPane.columnIndex="0"
+                                   style="-fx-text-fill: #111827;
+                                          -fx-font-size: 14px;"/>
+
+
+                            <!-- Course -->
+
+                            <Label text="Course"
+                                   GridPane.rowIndex="0"
+                                   GridPane.columnIndex="1"
+                                   style="-fx-font-weight: bold;
+                                          -fx-text-fill: #6b7280;"/>
+
+                            <Label fx:id="courseLabel"
+                                   text="No course assigned"
+                                   wrapText="true"
+                                   GridPane.rowIndex="1"
+                                   GridPane.columnIndex="1"
+                                   style="-fx-text-fill: #111827;
+                                          -fx-font-size: 14px;"/>
+
+
+                            <!-- Registered Classes -->
+
+                            <Label text="Registered Classes"
+                                   GridPane.rowIndex="2"
+                                   GridPane.columnIndex="0"
+                                   style="-fx-font-weight: bold;
+                                          -fx-text-fill: #6b7280;"/>
+
+                            <Label fx:id="registeredClassesLabel"
+                                   text="No registered classes"
+                                   wrapText="true"
+                                   GridPane.rowIndex="3"
+                                   GridPane.columnIndex="0"
+                                   GridPane.columnSpan="4"
+                                   style="-fx-text-fill: #111827;
+                                          -fx-font-size: 14px;"/>
+
+                        </GridPane>
+
+                    </VBox>
+
+
+                    <!-- ================================================= -->
+                    <!-- CLOSE BUTTON -->
+                    <!-- ================================================= -->
+
+                    <HBox alignment="CENTER_RIGHT">
+
+                        <Button text="Close"
+                                onAction="#onCloseClick"
+                                prefWidth="110"
+                                prefHeight="38"
+                                style="-fx-background-color: #374151;
+                                       -fx-text-fill: white;
+                                       -fx-font-weight: bold;
+                                       -fx-background-radius: 6;
+                                       -fx-cursor: hand;"/>
+
+                    </HBox>
+
+                </VBox>
+
+            </content>
+
+        </ScrollPane>
+
+    </center>
+
+
+    <!-- ========================================================= -->
+    <!-- FOOTER -->
+    <!-- ========================================================= -->
+
+    <bottom>
+
+        <HBox alignment="CENTER_RIGHT"
+              style="-fx-background-color: #ffffff;
+                     -fx-border-color: #e5e7eb transparent transparent transparent;
+                     -fx-padding: 12 25 12 25;">
+
+            <Label text="Student Registration System"
+                   style="-fx-text-fill: #6b7280;
+                          -fx-font-size: 11px;"/>
+
+        </HBox>
+
+    </bottom>
+
+</BorderPane>

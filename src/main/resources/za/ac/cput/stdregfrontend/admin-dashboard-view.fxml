@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="za.ac.cput.stdregfrontend.AdminDashboardController"
+            prefWidth="1200"
+            prefHeight="750"
+            minWidth="1000"
+            minHeight="650"
+            style="-fx-background-color: #f4f4f4;">
+
+    <!-- ========================================================= -->
+    <!-- TOP HEADER                                                -->
+    <!-- ========================================================= -->
+
+    <top>
+
+        <HBox alignment="CENTER_LEFT"
+              spacing="20"
+              prefHeight="75"
+              minHeight="75"
+              maxHeight="75"
+              style="-fx-background-color: #1f2937;">
+
+            <padding>
+                <Insets left="30"
+                        right="30"/>
+            </padding>
+
+            <Label text="STUDENT REGISTRATION SYSTEM"
+                   style="-fx-text-fill: white;
+                          -fx-font-size: 22px;
+                          -fx-font-weight: bold;"/>
+
+            <Label text="ADMINISTRATOR"
+                   style="-fx-text-fill: #d1d5db;
+                          -fx-font-size: 13px;
+                          -fx-font-weight: bold;"/>
+
+        </HBox>
+
+    </top>
+
+
+    <!-- ========================================================= -->
+    <!-- STATIC LEFT SIDEBAR                                       -->
+    <!-- ========================================================= -->
+
+    <left>
+
+        <VBox spacing="10"
+              prefWidth="220"
+              minWidth="220"
+              maxWidth="220"
+              style="-fx-background-color: #111827;">
+
+            <padding>
+                <Insets top="25"
+                        right="15"
+                        bottom="25"
+                        left="15"/>
+            </padding>
+
+
+            <!-- ================================================= -->
+            <!-- ADMIN MENU                                         -->
+            <!-- ================================================= -->
+
+            <Label text="ADMIN MENU"
+                   style="-fx-text-fill: #9ca3af;
+                          -fx-font-size: 12px;
+                          -fx-font-weight: bold;"/>
+
+
+            <!-- ================================================= -->
+            <!-- 1. APPLICANTS                                      -->
+            <!-- ================================================= -->
+
+            <Button text="Applicants"
+                    onAction="#handleApplicants"
+                    maxWidth="Infinity"
+                    prefHeight="42"/>
+
+
+            <!-- ================================================= -->
+            <!-- 2. APPLICATIONS                                    -->
+            <!-- ================================================= -->
+
+            <Button text="Applications"
+                    onAction="#handleApplications"
+                    maxWidth="Infinity"
+                    prefHeight="42"/>
+
+
+            <!-- ================================================= -->
+            <!-- 3. STUDENTS                                        -->
+            <!-- ================================================= -->
+
+            <Button text="Students"
+                    onAction="#handleStudents"
+                    maxWidth="Infinity"
+                    prefHeight="42"/>
+
+
+            <!-- ================================================= -->
+            <!-- 4. DEPARTMENTS                                     -->
+            <!-- ================================================= -->
+
+            <Button text="Departments"
+                    onAction="#handleDepartments"
+                    maxWidth="Infinity"
+                    prefHeight="42"/>
+
+
+            <!-- ================================================= -->
+            <!-- 5. COURSES                                         -->
+            <!-- ================================================= -->
+
+            <Button text="Courses"
+                    onAction="#handleCourses"
+                    maxWidth="Infinity"
+                    prefHeight="42"/>
+
+
+            <!-- ================================================= -->
+            <!-- 6. LECTURERS                                       -->
+            <!-- ================================================= -->
+
+            <Button text="Lecturers"
+                    onAction="#handleLecturers"
+                    maxWidth="Infinity"
+                    prefHeight="42"/>
+
+
+            <!-- ================================================= -->
+            <!-- 7. CLASSES                                         -->
+            <!-- ================================================= -->
+
+            <Button text="Classes"
+                    onAction="#handleClasses"
+                    maxWidth="Infinity"
+                    prefHeight="42"/>
+
+
+            <!-- ================================================= -->
+            <!-- 8. REGISTRATIONS                                   -->
+            <!-- ================================================= -->
+
+            <Button text="Registrations"
+                    onAction="#handleRegistrations"
+                    maxWidth="Infinity"
+                    prefHeight="42"/>
+
+
+            <!-- ================================================= -->
+            <!-- 9. REPORTS                                         -->
+            <!-- ================================================= -->
+
+            <Button text="Reports"
+                    onAction="#handleReports"
+                    maxWidth="Infinity"
+                    prefHeight="42"/>
+
+
+            <!-- ================================================= -->
+            <!-- SPACER                                             -->
+            <!-- ================================================= -->
+
+            <VBox VBox.vgrow="ALWAYS"/>
+
+
+            <!-- ================================================= -->
+            <!-- LOGOUT                                             -->
+            <!-- ================================================= -->
+
+            <Button text="LOGOUT"
+                    onAction="#handleLogout"
+                    maxWidth="Infinity"
+                    prefHeight="42"/>
+
+        </VBox>
+
+    </left>
+
+
+    <!-- ========================================================= -->
+    <!-- MAIN CONTENT AREA                                        -->
+    <!-- ========================================================= -->
+
+    <center>
+
+        <!--
+             IMPORTANT:
+             contentArea remains a StackPane so the existing
+             AdminDashboardController continues to work.
+
+             The ScrollPane is placed INSIDE the StackPane.
+        -->
+
+        <StackPane fx:id="contentArea">
+
+            <ScrollPane fitToWidth="true"
+                        fitToHeight="false"
+                        hbarPolicy="NEVER"
+                        vbarPolicy="AS_NEEDED"
+                        pannable="true"
+                        style="-fx-background-color: #f4f4f4;
+                               -fx-border-color: transparent;">
+
+                <content>
+
+                    <VBox spacing="25"
+                          alignment="TOP_LEFT"
+                          fillWidth="true">
+
+                        <padding>
+                            <Insets top="35"
+                                    right="40"
+                                    bottom="40"
+                                    left="40"/>
+                        </padding>
+
+
+                        <!-- ================================================= -->
+                        <!-- WELCOME                                            -->
+                        <!-- ================================================= -->
+
+                        <Label fx:id="welcomeLabel"
+                               text="Welcome, Administrator"
+                               style="-fx-text-fill: #1f2937;
+                                      -fx-font-size: 28px;
+                                      -fx-font-weight: bold;"/>
+
+
+                        <!-- ================================================= -->
+                        <!-- ACCOUNT EMAIL                                      -->
+                        <!-- ================================================= -->
+
+                        <Label fx:id="accountLabel"
+                               text=""
+                               style="-fx-text-fill: #6b7280;
+                                      -fx-font-size: 14px;"/>
+
+
+                        <!-- ================================================= -->
+                        <!-- SYSTEM TITLE                                      -->
+                        <!-- ================================================= -->
+
+                        <Label text="Student Registration System"
+                               style="-fx-text-fill: #374151;
+                                      -fx-font-size: 20px;
+                                      -fx-font-weight: bold;"/>
+
+
+                        <!-- ================================================= -->
+                        <!-- SYSTEM DESCRIPTION                               -->
+                        <!-- ================================================= -->
+
+                        <Label text="Follow the registration process from Applicant → Application → Student → Registration."
+                               wrapText="true"
+                               maxWidth="750"
+                               style="-fx-text-fill: #6b7280;
+                                      -fx-font-size: 15px;"/>
+
+
+                        <!-- ================================================= -->
+                        <!-- PROCESS OVERVIEW                                  -->
+                        <!-- ================================================= -->
+
+                        <VBox spacing="15"
+                              maxWidth="750"
+                              style="-fx-background-color: white;
+                                     -fx-background-radius: 8;
+                                     -fx-border-color: #e5e7eb;
+                                     -fx-border-radius: 8;">
+
+                            <padding>
+                                <Insets top="25"
+                                        right="25"
+                                        bottom="25"
+                                        left="25"/>
+                            </padding>
+
+
+                            <!-- ============================================= -->
+                            <!-- PROCESS TITLE                                 -->
+                            <!-- ============================================= -->
+
+                            <Label text="System Process"
+                                   style="-fx-font-size: 20px;
+                                          -fx-font-weight: bold;
+                                          -fx-text-fill: #1f2937;"/>
+
+
+                            <!-- ============================================= -->
+                            <!-- APPLICANT                                      -->
+                            <!-- ============================================= -->
+
+                            <Label text="1. Applicant"
+                                   style="-fx-font-size: 15px;
+                                          -fx-font-weight: bold;
+                                          -fx-text-fill: #374151;"/>
+
+                            <Label text="A person applies to study at the institution."
+                                   wrapText="true"
+                                   style="-fx-text-fill: #6b7280;"/>
+
+
+                            <Label text="↓"
+                                   style="-fx-font-size: 18px;
+                                          -fx-font-weight: bold;"/>
+
+
+                            <!-- ============================================= -->
+                            <!-- APPLICATION                                    -->
+                            <!-- ============================================= -->
+
+                            <Label text="2. Application"
+                                   style="-fx-font-size: 15px;
+                                          -fx-font-weight: bold;
+                                          -fx-text-fill: #374151;"/>
+
+                            <Label text="The applicant applies for a specific course."
+                                   wrapText="true"
+                                   style="-fx-text-fill: #6b7280;"/>
+
+
+                            <Label text="↓"
+                                   style="-fx-font-size: 18px;
+                                          -fx-font-weight: bold;"/>
+
+
+                            <!-- ============================================= -->
+                            <!-- STUDENT                                        -->
+                            <!-- ============================================= -->
+
+                            <Label text="3. Student"
+                                   style="-fx-font-size: 15px;
+                                          -fx-font-weight: bold;
+                                          -fx-text-fill: #374151;"/>
+
+                            <Label text="When the application is approved, the applicant becomes a student and the relationship is created automatically."
+                                   wrapText="true"
+                                   style="-fx-text-fill: #6b7280;"/>
+
+
+                            <Label text="↓"
+                                   style="-fx-font-size: 18px;
+                                          -fx-font-weight: bold;"/>
+
+
+                            <!-- ============================================= -->
+                            <!-- REGISTRATION                                   -->
+                            <!-- ============================================= -->
+
+                            <Label text="4. Registration"
+                                   style="-fx-font-size: 15px;
+                                          -fx-font-weight: bold;
+                                          -fx-text-fill: #374151;"/>
+
+                            <Label text="The student registers for classes belonging to the course they were admitted to."
+                                   wrapText="true"
+                                   style="-fx-text-fill: #6b7280;"/>
+
+                        </VBox>
+
+
+                        <!-- ================================================= -->
+                        <!-- EXTRA SPACE AT BOTTOM                             -->
+                        <!-- ================================================= -->
+
+                        <VBox prefHeight="30"/>
+
+                    </VBox>
+
+                </content>
+
+            </ScrollPane>
+
+        </StackPane>
+
+    </center>
+
+</BorderPane>

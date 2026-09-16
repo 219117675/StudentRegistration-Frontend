@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="za.ac.cput.stdregfrontend.AddDepartmentController"
+      spacing="20">
+
+    <padding>
+        <Insets top="30"
+                right="35"
+                bottom="30"
+                left="35"/>
+    </padding>
+
+    <Label text="Add New Department"
+           style="-fx-font-size: 24px;
+                  -fx-font-weight: bold;"/>
+
+    <GridPane hgap="15"
+              vgap="15">
+
+        <Label text="Department Code:"
+               GridPane.rowIndex="0"
+               GridPane.columnIndex="0"/>
+
+        <TextField fx:id="departmentCodeField"
+                   promptText="e.g. ICT"
+                   prefWidth="280"
+                   GridPane.rowIndex="0"
+                   GridPane.columnIndex="1"/>
+
+
+        <Label text="Department Name:"
+               GridPane.rowIndex="1"
+               GridPane.columnIndex="0"/>
+
+        <TextField fx:id="departmentNameField"
+                   promptText="e.g. Information Technology"
+                   prefWidth="280"
+                   GridPane.rowIndex="1"
+                   GridPane.columnIndex="1"/>
+
+    </GridPane>
+
+
+    <HBox spacing="12"
+          alignment="CENTER_RIGHT">
+
+        <Button text="Save"
+                onAction="#onSaveClick"
+                prefWidth="100"/>
+
+        <Button text="Cancel"
+                onAction="#onCancelClick"
+                prefWidth="100"/>
+
+    </HBox>
+
+</VBox>

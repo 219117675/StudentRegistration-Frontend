@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="za.ac.cput.stdregfrontend.ApplicationListController"
+            prefWidth="960"
+            prefHeight="675"
+            style="-fx-background-color: #f4f4f4;">
+
+    <!-- ========================================================= -->
+    <!-- TOP HEADER                                                -->
+    <!-- ========================================================= -->
+
+    <top>
+
+        <VBox spacing="8">
+
+            <padding>
+                <Insets top="25"
+                        right="35"
+                        bottom="15"
+                        left="35"/>
+            </padding>
+
+            <Label text="APPLICATION MANAGEMENT"
+                   style="-fx-font-size: 26px;
+                          -fx-font-weight: bold;
+                          -fx-text-fill: #1f2937;"/>
+
+            <Label text="Manage applications submitted by applicants for available courses."
+                   style="-fx-font-size: 14px;
+                          -fx-text-fill: #6b7280;"/>
+
+        </VBox>
+
+    </top>
+
+
+    <!-- ========================================================= -->
+    <!-- CENTER CONTENT                                            -->
+    <!-- ========================================================= -->
+
+    <center>
+
+        <VBox spacing="15">
+
+            <padding>
+                <Insets top="5"
+                        right="35"
+                        bottom="10"
+                        left="35"/>
+            </padding>
+
+
+            <!-- ================================================= -->
+            <!-- SEARCH                                             -->
+            <!-- ================================================= -->
+
+            <HBox spacing="10"
+                  alignment="CENTER_LEFT">
+
+                <Label text="Search:"
+                       style="-fx-font-size: 14px;
+                              -fx-font-weight: bold;
+                              -fx-text-fill: #374151;"/>
+
+                <TextField fx:id="searchField"
+                           promptText="Search by application, applicant, course or status..."
+                           prefWidth="400"
+                           prefHeight="36"/>
+
+                <Button text="Refresh"
+                        fx:id="refreshButton"
+                        onAction="#onRefreshApplicationClick"
+                        prefWidth="90"
+                        prefHeight="36"/>
+
+            </HBox>
+
+
+            <!-- ================================================= -->
+            <!-- APPLICATION TABLE                                  -->
+            <!-- ================================================= -->
+
+            <TableView fx:id="applicationTable"
+                       VBox.vgrow="ALWAYS"
+                       prefWidth="890"
+                       prefHeight="500">
+
+                <columns>
+
+                    <TableColumn fx:id="applicationIdColumn"
+                                 text="Application ID"
+                                 prefWidth="110"/>
+
+
+                    <TableColumn fx:id="applicantIdColumn"
+                                 text="Applicant ID"
+                                 prefWidth="110"/>
+
+
+                    <TableColumn fx:id="applicantNameColumn"
+                                 text="Applicant Name"
+                                 prefWidth="190"/>
+
+
+                    <TableColumn fx:id="courseCodeColumn"
+                                 text="Course Code"
+                                 prefWidth="130"/>
+
+
+                    <TableColumn fx:id="courseNameColumn"
+                                 text="Course"
+                                 prefWidth="230"/>
+
+
+                    <TableColumn fx:id="statusColumn"
+                                 text="Status"
+                                 prefWidth="120"/>
+
+                </columns>
+
+            </TableView>
+
+        </VBox>
+
+    </center>
+
+
+    <!-- ========================================================= -->
+    <!-- BOTTOM ACTION BUTTONS                                    -->
+    <!-- ========================================================= -->
+
+    <bottom>
+
+        <HBox spacing="10"
+              alignment="CENTER_RIGHT">
+
+            <padding>
+                <Insets top="10"
+                        right="35"
+                        bottom="20"
+                        left="35"/>
+            </padding>
+
+
+            <Button text="Add Application"
+                    fx:id="addButton"
+                    onAction="#onAddApplicationClick"
+                    prefWidth="135"
+                    prefHeight="38"/>
+
+
+            <Button text="Edit Application"
+                    fx:id="editButton"
+                    onAction="#onEditApplicationClick"
+                    prefWidth="135"
+                    prefHeight="38"/>
+
+
+            <Button text="Delete Application"
+                    fx:id="deleteButton"
+                    onAction="#onDeleteApplicationClick"
+                    prefWidth="135"
+                    prefHeight="38"/>
+
+
+            <Button text="Approve"
+                    fx:id="approveButton"
+                    onAction="#onApproveApplicationClick"
+                    prefWidth="110"
+                    prefHeight="38"/>
+
+
+            <Button text="Reject"
+                    fx:id="rejectButton"
+                    onAction="#onRejectApplicationClick"
+                    prefWidth="100"
+                    prefHeight="38"/>
+
+
+            <Button text="Back"
+                    fx:id="backButton"
+                    onAction="#onBackClick"
+                    prefWidth="100"
+                    prefHeight="38"/>
+
+        </HBox>
+
+    </bottom>
+
+</BorderPane>

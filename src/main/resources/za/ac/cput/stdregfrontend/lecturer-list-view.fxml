@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Pos?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="za.ac.cput.stdregfrontend.LecturerListController"
+            prefWidth="960"
+            prefHeight="675"
+            style="-fx-background-color: #f4f4f4;">
+
+    <!-- ========================================================= -->
+    <!-- TOP CONTENT                                               -->
+    <!-- ========================================================= -->
+
+    <top>
+
+        <VBox spacing="8">
+
+            <padding>
+                <Insets top="25"
+                        right="35"
+                        bottom="15"
+                        left="35"/>
+            </padding>
+
+            <Label text="LECTURER MANAGEMENT"
+                   style="-fx-font-size: 26px;
+                          -fx-font-weight: bold;
+                          -fx-text-fill: #1f2937;"/>
+
+            <Label text="Manage lecturers, departments and assigned classes."
+                   style="-fx-font-size: 14px;
+                          -fx-text-fill: #6b7280;"/>
+
+        </VBox>
+
+    </top>
+
+
+    <!-- ========================================================= -->
+    <!-- MAIN CONTENT                                               -->
+    <!-- ========================================================= -->
+
+    <center>
+
+        <VBox spacing="15">
+
+            <padding>
+                <Insets top="5"
+                        right="35"
+                        bottom="10"
+                        left="35"/>
+            </padding>
+
+
+            <!-- ================================================= -->
+            <!-- SEARCH                                             -->
+            <!-- ================================================= -->
+
+            <HBox spacing="10"
+                  alignment="CENTER_LEFT">
+
+                <Label text="Search:"
+                       style="-fx-font-size: 14px;
+                              -fx-font-weight: bold;
+                              -fx-text-fill: #374151;"/>
+
+                <TextField fx:id="searchField"
+                           promptText="Search by name or employee number"
+                           prefWidth="350"
+                           prefHeight="36"/>
+
+                <Button text="Search"
+                        onAction="#onSearchClick"
+                        prefWidth="90"
+                        prefHeight="36"/>
+
+                <Button text="Refresh"
+                        onAction="#onRefreshClick"
+                        prefWidth="90"
+                        prefHeight="36"/>
+
+            </HBox>
+
+
+            <!-- ================================================= -->
+            <!-- TABLE                                              -->
+            <!-- ================================================= -->
+
+            <TableView fx:id="lecturerTable"
+                       VBox.vgrow="ALWAYS"
+                       prefHeight="500"
+                       prefWidth="890">
+
+                <columns>
+
+                    <TableColumn fx:id="idColumn"
+                                 text="Person ID"
+                                 prefWidth="90"/>
+
+                    <TableColumn fx:id="lecturerIdColumn"
+                                 text="Lecturer ID"
+                                 prefWidth="100"/>
+
+                    <TableColumn fx:id="firstNameColumn"
+                                 text="First Name"
+                                 prefWidth="120"/>
+
+                    <TableColumn fx:id="lastNameColumn"
+                                 text="Last Name"
+                                 prefWidth="120"/>
+
+                    <TableColumn fx:id="employeeNumberColumn"
+                                 text="Employee Number"
+                                 prefWidth="145"/>
+
+                    <TableColumn fx:id="emailColumn"
+                                 text="Email"
+                                 prefWidth="190"/>
+
+                    <TableColumn fx:id="departmentColumn"
+                                 text="Department"
+                                 prefWidth="170"/>
+
+                </columns>
+
+            </TableView>
+
+        </VBox>
+
+    </center>
+
+
+    <!-- ========================================================= -->
+    <!-- ACTION BUTTONS                                             -->
+    <!-- ========================================================= -->
+
+    <bottom>
+
+        <HBox spacing="10"
+              alignment="CENTER_RIGHT">
+
+            <padding>
+                <Insets top="10"
+                        right="35"
+                        bottom="20"
+                        left="35"/>
+            </padding>
+
+
+            <Button text="Add Lecturer"
+                    onAction="#onAddLecturerClick"
+                    prefWidth="115"
+                    prefHeight="38"/>
+
+
+            <Button text="View Lecturer"
+                    onAction="#onViewLecturerClick"
+                    prefWidth="115"
+                    prefHeight="38"/>
+
+
+            <Button text="Edit Lecturer"
+                    onAction="#onEditLecturerClick"
+                    prefWidth="115"
+                    prefHeight="38"/>
+
+
+            <Button text="Assign Class"
+                    onAction="#onAssignClassClick"
+                    prefWidth="115"
+                    prefHeight="38"/>
+
+
+            <Button text="Assigned Classes"
+                    onAction="#onViewAssignedClassesClick"
+                    prefWidth="130"
+                    prefHeight="38"/>
+
+
+            <Button text="Delete Lecturer"
+                    onAction="#onDeleteLecturerClick"
+                    prefWidth="125"
+                    prefHeight="38"/>
+
+        </HBox>
+
+    </bottom>
+
+</BorderPane>

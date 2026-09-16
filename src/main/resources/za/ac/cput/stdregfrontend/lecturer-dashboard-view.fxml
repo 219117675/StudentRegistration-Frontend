@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Pos?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="za.ac.cput.stdregfrontend.LecturerDashboardController"
+            prefWidth="1200"
+            prefHeight="750"
+            style="-fx-background-color: #f4f4f4;">
+
+    <!-- ============================================================
+         TOP HEADER
+         ============================================================ -->
+
+    <top>
+
+        <HBox alignment="CENTER_LEFT"
+              spacing="20"
+              prefHeight="75"
+              style="-fx-background-color: #1f2937;">
+
+            <padding>
+                <Insets left="30"
+                        right="30"/>
+            </padding>
+
+            <Label text="STUDENT REGISTRATION SYSTEM"
+                   style="-fx-text-fill: white;
+                          -fx-font-size: 22px;
+                          -fx-font-weight: bold;"/>
+
+            <Label text="LECTURER PORTAL"
+                   style="-fx-text-fill: #d1d5db;
+                          -fx-font-size: 13px;
+                          -fx-font-weight: bold;"/>
+
+        </HBox>
+
+    </top>
+
+
+    <!-- ============================================================
+         LEFT SIDEBAR
+         ============================================================ -->
+
+    <left>
+
+        <VBox spacing="10"
+              prefWidth="220"
+              style="-fx-background-color: #111827;">
+
+            <padding>
+                <Insets top="25"
+                        right="15"
+                        bottom="25"
+                        left="15"/>
+            </padding>
+
+
+            <Label text="LECTURER MENU"
+                   style="-fx-text-fill: #9ca3af;
+                          -fx-font-size: 12px;
+                          -fx-font-weight: bold;"/>
+
+
+            <Button text="My Profile"
+                    fx:id="profileButton"
+                    onAction="#handleProfile"
+                    maxWidth="Infinity"
+                    prefHeight="42"/>
+
+
+            <Button text="My Classes"
+                    maxWidth="Infinity"
+                    prefHeight="42"
+                    style="-fx-font-weight: bold;"/>
+
+
+            <Button text="My Students"
+                    maxWidth="Infinity"
+                    prefHeight="42"/>
+
+
+            <Button text="Attendance"
+                    maxWidth="Infinity"
+                    prefHeight="42"/>
+
+
+            <Button text="Results"
+                    maxWidth="Infinity"
+                    prefHeight="42"/>
+
+
+            <VBox VBox.vgrow="ALWAYS"/>
+
+
+            <Button text="LOGOUT"
+                    fx:id="logoutButton"
+                    onAction="#handleLogout"
+                    maxWidth="Infinity"
+                    prefHeight="42"/>
+
+        </VBox>
+
+    </left>
+
+
+    <!-- ============================================================
+         MAIN CONTENT
+         ============================================================ -->
+
+    <center>
+
+        <VBox spacing="25"
+              alignment="TOP_LEFT">
+
+            <padding>
+                <Insets top="35"
+                        right="40"
+                        bottom="35"
+                        left="40"/>
+            </padding>
+
+
+            <!-- ====================================================
+                 WELCOME
+                 ==================================================== -->
+
+            <Label fx:id="welcomeLabel"
+                   text="Welcome, Lecturer"
+                   style="-fx-text-fill: #1f2937;
+                          -fx-font-size: 28px;
+                          -fx-font-weight: bold;"/>
+
+
+            <HBox spacing="15">
+
+                <Label text="Account:"
+                       style="-fx-font-weight: bold;
+                              -fx-text-fill: #374151;"/>
+
+                <Label fx:id="accountLabel"
+                       text=""
+                       style="-fx-text-fill: #6b7280;
+                              -fx-font-size: 14px;"/>
+
+                <Label text="Person ID:"
+                       style="-fx-font-weight: bold;
+                              -fx-text-fill: #374151;"/>
+
+                <Label fx:id="personIdLabel"
+                       text="-"
+                       style="-fx-text-fill: #6b7280;
+                              -fx-font-size: 14px;"/>
+
+            </HBox>
+
+
+            <!-- ====================================================
+                 PAGE TITLE
+                 ==================================================== -->
+
+            <HBox alignment="CENTER_LEFT">
+
+                <Label text="MY CLASSES"
+                       style="-fx-text-fill: #1f2937;
+                              -fx-font-size: 22px;
+                              -fx-font-weight: bold;"/>
+
+                <VBox HBox.hgrow="ALWAYS"/>
+
+                <Button fx:id="refreshButton"
+                        text="Refresh"
+                        prefWidth="100"
+                        prefHeight="35"
+                        onAction="#handleRefresh"/>
+
+            </HBox>
+
+
+            <!-- ====================================================
+                 SUMMARY CARD
+                 ==================================================== -->
+
+            <HBox spacing="20">
+
+                <VBox prefWidth="220"
+                      prefHeight="110"
+                      alignment="CENTER"
+                      spacing="8"
+                      style="-fx-background-color: white;
+                             -fx-background-radius: 8;
+                             -fx-border-color: #e5e7eb;
+                             -fx-border-radius: 8;">
+
+                    <Label text="MY CLASSES"
+                           style="-fx-font-size: 13px;
+                                  -fx-font-weight: bold;
+                                  -fx-text-fill: #6b7280;"/>
+
+                    <Label fx:id="classCountLabel"
+                           text="0"
+                           style="-fx-font-size: 30px;
+                                  -fx-font-weight: bold;
+                                  -fx-text-fill: #1f2937;"/>
+
+                </VBox>
+
+            </HBox>
+
+
+            <!-- ====================================================
+                 CLASSES TABLE
+                 ==================================================== -->
+
+            <TableView fx:id="classesTable"
+                       VBox.vgrow="ALWAYS">
+
+                <columns>
+
+                    <TableColumn fx:id="classIdColumn"
+                                 text="Class ID"
+                                 prefWidth="90"/>
+
+                    <TableColumn fx:id="classCodeColumn"
+                                 text="Class Code"
+                                 prefWidth="140"/>
+
+                    <TableColumn fx:id="classNameColumn"
+                                 text="Class Name"
+                                 prefWidth="280"/>
+
+                    <TableColumn fx:id="courseColumn"
+                                 text="Course"
+                                 prefWidth="180"/>
+
+                    <TableColumn fx:id="departmentColumn"
+                                 text="Department"
+                                 prefWidth="220"/>
+
+                </columns>
+
+            </TableView>
+
+
+            <!-- ====================================================
+                 FOOTER INFORMATION
+                 ==================================================== -->
+
+            <Label text="Only classes assigned to your lecturer account are displayed."
+                   style="-fx-text-fill: #6b7280;
+                          -fx-font-size: 13px;"/>
+
+        </VBox>
+
+    </center>
+
+</BorderPane>

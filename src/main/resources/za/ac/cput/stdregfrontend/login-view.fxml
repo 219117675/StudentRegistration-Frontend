@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Pos?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="za.ac.cput.stdregfrontend.LoginController"
+            style="-fx-background-color: #f4f4f4;">
+
+    <top>
+
+        <VBox alignment="CENTER"
+              spacing="8"
+              prefHeight="150"
+              style="-fx-background-color: #1f2937;">
+
+            <Label text="STUDENT REGISTRATION SYSTEM"
+                   style="-fx-text-fill: white;
+                          -fx-font-size: 26px;
+                          -fx-font-weight: bold;"/>
+
+            <Label text="Secure Login"
+                   style="-fx-text-fill: #d1d5db;
+                          -fx-font-size: 15px;"/>
+
+        </VBox>
+
+    </top>
+
+    <center>
+
+        <VBox alignment="CENTER"
+              spacing="18"
+              maxWidth="430"
+              style="-fx-background-color: white;
+                     -fx-padding: 40;
+                     -fx-background-radius: 8;
+                     -fx-border-color: #e5e7eb;
+                     -fx-border-radius: 8;">
+
+            <Label text="WELCOME BACK"
+                   style="-fx-font-size: 24px;
+                          -fx-font-weight: bold;
+                          -fx-text-fill: #1f2937;"/>
+
+            <Label text="Sign in to continue"
+                   style="-fx-font-size: 14px;
+                          -fx-text-fill: #6b7280;"/>
+
+            <VBox spacing="7">
+
+                <Label text="Email"
+                       style="-fx-font-size: 14px;
+                              -fx-font-weight: bold;
+                              -fx-text-fill: #374151;"/>
+
+                <TextField fx:id="emailField"
+                           promptText="Enter your email"
+                           prefHeight="42"
+                           prefWidth="350"/>
+
+            </VBox>
+
+            <VBox spacing="7">
+
+                <Label text="Password"
+                       style="-fx-font-size: 14px;
+                              -fx-font-weight: bold;
+                              -fx-text-fill: #374151;"/>
+
+                <PasswordField fx:id="passwordField"
+                               promptText="Enter your password"
+                               prefHeight="42"
+                               prefWidth="350"/>
+
+            </VBox>
+
+            <Label fx:id="messageLabel"
+                   wrapText="true"
+                   maxWidth="350"
+                   alignment="CENTER"
+                   style="-fx-font-size: 13px;
+                          -fx-text-fill: #b91c1c;"/>
+
+            <Button fx:id="loginButton"
+                    text="LOGIN"
+                    onAction="#handleLogin"
+                    prefWidth="200"
+                    prefHeight="44"
+                    style="-fx-background-color: #1f2937;
+                           -fx-text-fill: white;
+                           -fx-font-size: 15px;
+                           -fx-font-weight: bold;
+                           -fx-background-radius: 5;"/>
+
+        </VBox>
+
+    </center>
+
+    <bottom>
+
+        <Label text="Student Registration System"
+               alignment="CENTER"
+               maxWidth="Infinity"
+               prefHeight="50"
+               style="-fx-text-fill: #6b7280;
+                      -fx-font-size: 12px;"/>
+
+    </bottom>
+
+</BorderPane>

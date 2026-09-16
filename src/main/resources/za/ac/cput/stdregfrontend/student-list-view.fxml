@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="za.ac.cput.stdregfrontend.StudentListController">
+
+    <!-- ========================= -->
+    <!-- TOP -->
+    <!-- ========================= -->
+
+    <top>
+
+        <VBox spacing="15">
+
+            <padding>
+                <Insets top="20"
+                        right="20"
+                        bottom="15"
+                        left="20"/>
+            </padding>
+
+            <Label text="Student Management"
+                   style="-fx-font-size: 24px;
+                          -fx-font-weight: bold;"/>
+
+            <HBox spacing="10">
+
+                <TextField fx:id="searchField"
+                           promptText="Search students..."
+                           prefWidth="350"/>
+
+                <Button text="Search"
+                        onAction="#onSearchStudentClick"
+                        prefWidth="100"/>
+
+                <Button text="Refresh"
+                        onAction="#onRefreshStudentClick"
+                        prefWidth="100"/>
+
+            </HBox>
+
+        </VBox>
+
+    </top>
+
+
+    <!-- ========================= -->
+    <!-- CENTER -->
+    <!-- ========================= -->
+
+    <center>
+
+        <TableView fx:id="studentTable"
+                   prefHeight="500"
+                   prefWidth="1000">
+
+            <columns>
+
+                <TableColumn fx:id="personIdColumn"
+                             text="Person ID"
+                             prefWidth="100"/>
+
+                <TableColumn fx:id="studentIdColumn"
+                             text="Student ID"
+                             prefWidth="100"/>
+
+                <TableColumn fx:id="studentNumberColumn"
+                             text="Student Number"
+                             prefWidth="150"/>
+
+                <TableColumn fx:id="firstNameColumn"
+                             text="First Name"
+                             prefWidth="150"/>
+
+                <TableColumn fx:id="lastNameColumn"
+                             text="Last Name"
+                             prefWidth="150"/>
+
+                <TableColumn fx:id="emailColumn"
+                             text="Email"
+                             prefWidth="250"/>
+
+            </columns>
+
+        </TableView>
+
+    </center>
+
+
+    <!-- ========================= -->
+    <!-- BOTTOM -->
+    <!-- ========================= -->
+
+    <bottom>
+
+        <HBox spacing="10"
+              alignment="CENTER_RIGHT">
+
+            <padding>
+                <Insets top="15"
+                        right="20"
+                        bottom="20"
+                        left="20"/>
+            </padding>
+
+            <Button fx:id="addButton"
+                    text="Add Student"
+                    onAction="#onAddStudentClick"
+                    prefWidth="120"/>
+
+            <Button fx:id="viewButton"
+                    text="View Details"
+                    onAction="#onViewStudentClick"
+                    prefWidth="120"/>
+
+            <Button fx:id="editButton"
+                    text="Edit Student"
+                    onAction="#onEditStudentClick"
+                    prefWidth="120"/>
+
+            <Button fx:id="deleteButton"
+                    text="Delete Student"
+                    onAction="#onDeleteStudentClick"
+                    prefWidth="120"/>
+
+            <Button text="Link Applicant"
+                    onAction="#onLinkApplicantClick"
+                    prefWidth="130"/>
+
+            <Button text="Back"
+                    onAction="#onBackClick"
+                    prefWidth="100"/>
+
+        </HBox>
+
+    </bottom>
+
+</BorderPane>

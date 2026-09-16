@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox
+        xmlns="http://javafx.com/javafx"
+        xmlns:fx="http://javafx.com/fxml/1"
+        fx:controller="za.ac.cput.stdregfrontend.LinkApplicantController"
+        spacing="15">
+
+    <padding>
+        <Insets
+                top="25"
+                right="30"
+                bottom="25"
+                left="30"/>
+    </padding>
+
+    <Label
+            text="Link Applicant to Student"
+            style="-fx-font-size: 22px; -fx-font-weight: bold;"/>
+
+    <Label
+            text="Select the applicant that belongs to this student."/>
+
+    <ComboBox
+            fx:id="applicantComboBox"
+            prefWidth="400"
+            promptText="Select Applicant"/>
+
+    <HBox
+            spacing="10"
+            alignment="CENTER_RIGHT">
+
+        <Button
+                fx:id="linkButton"
+                text="Link Applicant"
+                onAction="#onLinkApplicantClick"/>
+
+        <Button
+                fx:id="cancelButton"
+                text="Cancel"
+                onAction="#onCancelClick"/>
+
+    </HBox>
+
+</VBox>

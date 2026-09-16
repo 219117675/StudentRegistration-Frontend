@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<ScrollPane
+        xmlns="http://javafx.com/javafx"
+        xmlns:fx="http://javafx.com/fxml/1"
+        fx:controller="za.ac.cput.stdregfrontend.AddStudentController"
+        fitToWidth="true"
+        fitToHeight="true">
+
+    <content>
+
+        <VBox spacing="20">
+
+            <padding>
+                <Insets top="25"
+                        right="35"
+                        bottom="25"
+                        left="35"/>
+            </padding>
+
+
+            <!-- ================================================= -->
+            <!-- TITLE -->
+            <!-- ================================================= -->
+
+            <Label
+                    text="Add New Student"
+                    style="-fx-font-size: 24px;
+                           -fx-font-weight: bold;"/>
+
+
+            <!-- ================================================= -->
+            <!-- PERSONAL INFORMATION -->
+            <!-- ================================================= -->
+
+            <VBox spacing="10">
+
+                <Label
+                        text="Personal Information"
+                        style="-fx-font-size: 18px;
+                               -fx-font-weight: bold;"/>
+
+                <GridPane
+                        hgap="12"
+                        vgap="12">
+
+                    <!-- FIRST NAME -->
+
+                    <Label
+                            text="First Name:"
+                            GridPane.rowIndex="0"
+                            GridPane.columnIndex="0"/>
+
+                    <TextField
+                            fx:id="firstNameField"
+                            promptText="Enter first name"
+                            prefWidth="300"
+                            GridPane.rowIndex="0"
+                            GridPane.columnIndex="1"/>
+
+
+                    <!-- LAST NAME -->
+
+                    <Label
+                            text="Last Name:"
+                            GridPane.rowIndex="1"
+                            GridPane.columnIndex="0"/>
+
+                    <TextField
+                            fx:id="lastNameField"
+                            promptText="Enter last name"
+                            prefWidth="300"
+                            GridPane.rowIndex="1"
+                            GridPane.columnIndex="1"/>
+
+
+                    <!-- DATE OF BIRTH -->
+
+                    <Label
+                            text="Date of Birth:"
+                            GridPane.rowIndex="2"
+                            GridPane.columnIndex="0"/>
+
+                    <DatePicker
+                            fx:id="dateOfBirthPicker"
+                            prefWidth="300"
+                            GridPane.rowIndex="2"
+                            GridPane.columnIndex="1"/>
+
+
+                    <!-- GENDER -->
+
+                    <Label
+                            text="Gender:"
+                            GridPane.rowIndex="3"
+                            GridPane.columnIndex="0"/>
+
+                    <ComboBox
+                            fx:id="genderComboBox"
+                            promptText="Select gender"
+                            prefWidth="300"
+                            GridPane.rowIndex="3"
+                            GridPane.columnIndex="1"/>
+
+
+                    <!-- RACE -->
+
+                    <Label
+                            text="Race:"
+                            GridPane.rowIndex="4"
+                            GridPane.columnIndex="0"/>
+
+                    <ComboBox
+                            fx:id="raceComboBox"
+                            promptText="Select race"
+                            prefWidth="300"
+                            GridPane.rowIndex="4"
+                            GridPane.columnIndex="1"/>
+
+                </GridPane>
+
+            </VBox>
+
+
+            <!-- ================================================= -->
+            <!-- ADDRESS -->
+            <!-- ================================================= -->
+
+            <VBox spacing="10">
+
+                <Label
+                        text="Address"
+                        style="-fx-font-size: 18px;
+                               -fx-font-weight: bold;"/>
+
+                <GridPane
+                        hgap="12"
+                        vgap="12">
+
+                    <!-- STREET -->
+
+                    <Label
+                            text="Street:"
+                            GridPane.rowIndex="0"
+                            GridPane.columnIndex="0"/>
+
+                    <TextField
+                            fx:id="streetField"
+                            promptText="Street address"
+                            prefWidth="300"
+                            GridPane.rowIndex="0"
+                            GridPane.columnIndex="1"/>
+
+
+                    <!-- SUBURB -->
+
+                    <Label
+                            text="Suburb:"
+                            GridPane.rowIndex="1"
+                            GridPane.columnIndex="0"/>
+
+                    <TextField
+                            fx:id="suburbField"
+                            promptText="Suburb"
+                            prefWidth="300"
+                            GridPane.rowIndex="1"
+                            GridPane.columnIndex="1"/>
+
+
+                    <!-- CITY -->
+
+                    <Label
+                            text="City:"
+                            GridPane.rowIndex="2"
+                            GridPane.columnIndex="0"/>
+
+                    <TextField
+                            fx:id="cityField"
+                            promptText="City"
+                            prefWidth="300"
+                            GridPane.rowIndex="2"
+                            GridPane.columnIndex="1"/>
+
+
+                    <!-- PROVINCE -->
+
+                    <Label
+                            text="Province:"
+                            GridPane.rowIndex="3"
+                            GridPane.columnIndex="0"/>
+
+                    <TextField
+                            fx:id="provinceField"
+                            promptText="Province"
+                            prefWidth="300"
+                            GridPane.rowIndex="3"
+                            GridPane.columnIndex="1"/>
+
+
+                    <!-- POSTAL CODE -->
+
+                    <Label
+                            text="Postal Code:"
+                            GridPane.rowIndex="4"
+                            GridPane.columnIndex="0"/>
+
+                    <TextField
+                            fx:id="postalCodeField"
+                            promptText="Postal code"
+                            prefWidth="300"
+                            GridPane.rowIndex="4"
+                            GridPane.columnIndex="1"/>
+
+                </GridPane>
+
+            </VBox>
+
+
+            <!-- ================================================= -->
+            <!-- CONTACT DETAILS -->
+            <!-- ================================================= -->
+
+            <VBox spacing="10">
+
+                <Label
+                        text="Contact Details"
+                        style="-fx-font-size: 18px;
+                               -fx-font-weight: bold;"/>
+
+                <GridPane
+                        hgap="12"
+                        vgap="12">
+
+                    <!-- PERSONAL EMAIL -->
+
+                    <Label
+                            text="Personal Email:"
+                            GridPane.rowIndex="0"
+                            GridPane.columnIndex="0"/>
+
+                    <TextField
+                            fx:id="contactEmailField"
+                            promptText="e.g. john.doe@gmail.com"
+                            prefWidth="300"
+                            GridPane.rowIndex="0"
+                            GridPane.columnIndex="1"/>
+
+
+                    <!-- PHONE NUMBER -->
+
+                    <Label
+                            text="Phone Number:"
+                            GridPane.rowIndex="1"
+                            GridPane.columnIndex="0"/>
+
+                    <TextField
+                            fx:id="phoneNumberField"
+                            promptText="e.g. 0712345678"
+                            prefWidth="300"
+                            GridPane.rowIndex="1"
+                            GridPane.columnIndex="1"/>
+
+                </GridPane>
+
+            </VBox>
+
+
+            <!-- ================================================= -->
+            <!-- LOGIN -->
+            <!-- ================================================= -->
+
+            <VBox spacing="10">
+
+                <Label
+                        text="Student Login"
+                        style="-fx-font-size: 18px;
+                               -fx-font-weight: bold;"/>
+
+                <Label
+                        text="The student will use the automatically generated CPUT student email to log in."
+                        wrapText="true"/>
+
+                <GridPane
+                        hgap="12"
+                        vgap="12">
+
+                    <!-- PASSWORD -->
+
+                    <Label
+                            text="Password:"
+                            GridPane.rowIndex="0"
+                            GridPane.columnIndex="0"/>
+
+                    <PasswordField
+                            fx:id="passwordField"
+                            promptText="Enter password"
+                            prefWidth="300"
+                            GridPane.rowIndex="0"
+                            GridPane.columnIndex="1"/>
+
+
+                    <!-- CONFIRM PASSWORD -->
+
+                    <Label
+                            text="Confirm Password:"
+                            GridPane.rowIndex="1"
+                            GridPane.columnIndex="0"/>
+
+                    <PasswordField
+                            fx:id="confirmPasswordField"
+                            promptText="Confirm password"
+                            prefWidth="300"
+                            GridPane.rowIndex="1"
+                            GridPane.columnIndex="1"/>
+
+                </GridPane>
+
+            </VBox>
+
+
+            <!-- ================================================= -->
+            <!-- BUTTONS -->
+            <!-- ================================================= -->
+
+            <HBox
+                    spacing="12">
+
+                <Button
+                        text="Save Student"
+                        onAction="#onSaveStudentClick"
+                        prefWidth="130"/>
+
+                <Button
+                        text="Cancel"
+                        onAction="#onCancelClick"
+                        prefWidth="100"/>
+
+            </HBox>
+
+        </VBox>
+
+    </content>
+
+</ScrollPane>

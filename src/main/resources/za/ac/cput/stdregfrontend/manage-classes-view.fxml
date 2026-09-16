@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="za.ac.cput.stdregfrontend.ManageClassesController"
+            prefWidth="1200"
+            prefHeight="750"
+            style="-fx-background-color: #f4f4f4;">
+
+    <!-- ============================================================
+         HEADER
+         ============================================================ -->
+
+    <top>
+
+        <VBox spacing="8"
+              style="-fx-background-color: #1f2937;">
+
+            <padding>
+                <Insets top="25"
+                        right="30"
+                        bottom="25"
+                        left="30"/>
+            </padding>
+
+            <Label text="CLASS MANAGEMENT"
+                   style="-fx-text-fill: white;
+                          -fx-font-size: 24px;
+                          -fx-font-weight: bold;"/>
+
+            <Label text="Create and manage academic classes"
+                   style="-fx-text-fill: #d1d5db;
+                          -fx-font-size: 14px;"/>
+
+        </VBox>
+
+    </top>
+
+
+    <!-- ============================================================
+         MAIN CONTENT
+         ============================================================ -->
+
+    <center>
+
+        <VBox spacing="18">
+
+            <padding>
+                <Insets top="25"
+                        right="30"
+                        bottom="25"
+                        left="30"/>
+            </padding>
+
+
+            <!-- SEARCH AND ACTIONS -->
+
+            <HBox spacing="12"
+                  alignment="CENTER_LEFT">
+
+                <TextField fx:id="searchField"
+                           prefWidth="350"
+                           promptText="Search by class code, name or course..."/>
+
+                <Button fx:id="refreshButton"
+                        text="Refresh"
+                        onAction="#onRefreshClick"
+                        prefWidth="100"/>
+
+                <VBox HBox.hgrow="ALWAYS"/>
+
+                <Button fx:id="addButton"
+                        text="Add Class"
+                        onAction="#onAddClassClick"
+                        prefWidth="110"/>
+
+                <Button fx:id="editButton"
+                        text="Edit"
+                        onAction="#onEditClassClick"
+                        prefWidth="90"/>
+
+                <Button fx:id="deleteButton"
+                        text="Delete"
+                        onAction="#onDeleteClassClick"
+                        prefWidth="90"/>
+
+            </HBox>
+
+
+            <!-- ====================================================
+                 CLASS TABLE
+                 ==================================================== -->
+
+            <TableView fx:id="classTable"
+                       VBox.vgrow="ALWAYS">
+
+                <columns>
+
+                    <TableColumn fx:id="idColumn"
+                                 text="ID"
+                                 prefWidth="70"/>
+
+                    <TableColumn fx:id="codeColumn"
+                                 text="Class Code"
+                                 prefWidth="150"/>
+
+                    <TableColumn fx:id="nameColumn"
+                                 text="Class Name"
+                                 prefWidth="330"/>
+
+                    <TableColumn fx:id="courseColumn"
+                                 text="Course"
+                                 prefWidth="150"/>
+
+                    <TableColumn fx:id="lecturerColumn"
+                                 text="Lecturer"
+                                 prefWidth="220"/>
+
+                </columns>
+
+            </TableView>
+
+        </VBox>
+
+    </center>
+
+
+    <!-- ============================================================
+         FOOTER
+         ============================================================ -->
+
+    <bottom>
+
+        <HBox spacing="10"
+              alignment="CENTER_RIGHT">
+
+            <padding>
+                <Insets top="10"
+                        right="30"
+                        bottom="20"
+                        left="30"/>
+            </padding>
+
+            <Button fx:id="closeButton"
+                    text="Close"
+                    prefWidth="100"
+                    onAction="#onCloseClick"/>
+
+        </HBox>
+
+    </bottom>
+
+</BorderPane>

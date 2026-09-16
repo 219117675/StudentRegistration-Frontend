@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox
+        xmlns="http://javafx.com/javafx"
+        xmlns:fx="http://javafx.com/fxml/1"
+        fx:controller="za.ac.cput.stdregfrontend.AddApplicantController"
+        spacing="15">
+
+    <padding>
+        <Insets
+                top="25"
+                right="30"
+                bottom="25"
+                left="30"/>
+    </padding>
+
+    <Label
+            text="Add Applicant"
+            style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+
+    <GridPane
+            hgap="12"
+            vgap="12">
+
+        <Label
+                text="First Name:"
+                GridPane.columnIndex="0"
+                GridPane.rowIndex="0"/>
+
+        <TextField
+                fx:id="firstNameField"
+                promptText="First name"
+                prefWidth="300"
+                GridPane.columnIndex="1"
+                GridPane.rowIndex="0"/>
+
+        <Label
+                text="Last Name:"
+                GridPane.columnIndex="0"
+                GridPane.rowIndex="1"/>
+
+        <TextField
+                fx:id="lastNameField"
+                promptText="Last name"
+                GridPane.columnIndex="1"
+                GridPane.rowIndex="1"/>
+
+        <Label
+                text="Date of Birth:"
+                GridPane.columnIndex="0"
+                GridPane.rowIndex="2"/>
+
+        <DatePicker
+                fx:id="dateOfBirthPicker"
+                prefWidth="300"
+                GridPane.columnIndex="1"
+                GridPane.rowIndex="2"/>
+
+        <Label
+                text="Gender:"
+                GridPane.columnIndex="0"
+                GridPane.rowIndex="3"/>
+
+        <ComboBox
+                fx:id="genderComboBox"
+                prefWidth="300"
+                promptText="Select gender"
+                GridPane.columnIndex="1"
+                GridPane.rowIndex="3"/>
+
+        <Label
+                text="Race:"
+                GridPane.columnIndex="0"
+                GridPane.rowIndex="4"/>
+
+        <ComboBox
+                fx:id="raceComboBox"
+                prefWidth="300"
+                promptText="Select race"
+                GridPane.columnIndex="1"
+                GridPane.rowIndex="4"/>
+
+        <Label
+                text="Contact Email:"
+                GridPane.columnIndex="0"
+                GridPane.rowIndex="5"/>
+
+        <TextField
+                fx:id="contactEmailField"
+                promptText="Personal email"
+                prefWidth="300"
+                GridPane.columnIndex="1"
+                GridPane.rowIndex="5"/>
+
+        <Label
+                text="Phone Number:"
+                GridPane.columnIndex="0"
+                GridPane.rowIndex="6"/>
+
+        <TextField
+                fx:id="phoneNumberField"
+                promptText="Phone number"
+                prefWidth="300"
+                GridPane.columnIndex="1"
+                GridPane.rowIndex="6"/>
+
+        <Label
+                text="Street:"
+                GridPane.columnIndex="0"
+                GridPane.rowIndex="7"/>
+
+        <TextField
+                fx:id="streetField"
+                promptText="Street"
+                prefWidth="300"
+                GridPane.columnIndex="1"
+                GridPane.rowIndex="7"/>
+
+        <Label
+                text="Suburb:"
+                GridPane.columnIndex="0"
+                GridPane.rowIndex="8"/>
+
+        <TextField
+                fx:id="suburbField"
+                promptText="Suburb"
+                prefWidth="300"
+                GridPane.columnIndex="1"
+                GridPane.rowIndex="8"/>
+
+        <Label
+                text="City:"
+                GridPane.columnIndex="0"
+                GridPane.rowIndex="9"/>
+
+        <TextField
+                fx:id="cityField"
+                promptText="City"
+                prefWidth="300"
+                GridPane.columnIndex="1"
+                GridPane.rowIndex="9"/>
+
+        <Label
+                text="Province:"
+                GridPane.columnIndex="0"
+                GridPane.rowIndex="10"/>
+
+        <TextField
+                fx:id="provinceField"
+                promptText="Province"
+                prefWidth="300"
+                GridPane.columnIndex="1"
+                GridPane.rowIndex="10"/>
+
+        <Label
+                text="Postal Code:"
+                GridPane.columnIndex="0"
+                GridPane.rowIndex="11"/>
+
+        <TextField
+                fx:id="postalCodeField"
+                promptText="Postal code"
+                prefWidth="300"
+                GridPane.columnIndex="1"
+                GridPane.rowIndex="11"/>
+
+    </GridPane>
+
+    <HBox
+            spacing="10"
+            alignment="CENTER_RIGHT">
+
+        <Button
+                text="Save Applicant"
+                onAction="#onSaveClick"/>
+
+        <Button
+                text="Cancel"
+                onAction="#onCancelClick"/>
+
+    </HBox>
+
+</VBox>

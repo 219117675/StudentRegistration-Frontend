@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="za.ac.cput.stdregfrontend.RegistrationListController"
+            prefWidth="1100"
+            prefHeight="700">
+
+    <top>
+
+        <VBox spacing="15">
+
+            <padding>
+                <Insets top="25"
+                        right="25"
+                        bottom="20"
+                        left="25"/>
+            </padding>
+
+            <Label text="Registration Management"
+                   style="-fx-font-size: 26px;
+                          -fx-font-weight: bold;"/>
+
+            <HBox spacing="10">
+
+                <TextField fx:id="searchField"
+                           promptText="Search by registration ID, student, class or course..."
+                           prefWidth="430"/>
+
+                <Button text="Search"
+                        onAction="#onSearchClick"
+                        prefWidth="100"/>
+
+                <Button text="Refresh"
+                        onAction="#onRefreshClick"
+                        prefWidth="100"/>
+
+            </HBox>
+
+        </VBox>
+
+    </top>
+
+
+    <center>
+
+        <TableView fx:id="registrationTable">
+
+            <columns>
+
+                <TableColumn fx:id="registrationIdColumn"
+                             text="Registration ID"
+                             prefWidth="160"/>
+
+                <TableColumn fx:id="studentColumn"
+                             text="Student"
+                             prefWidth="280"/>
+
+                <TableColumn fx:id="classColumn"
+                             text="Class"
+                             prefWidth="280"/>
+
+                <TableColumn fx:id="courseColumn"
+                             text="Course"
+                             prefWidth="320"/>
+
+            </columns>
+
+        </TableView>
+
+    </center>
+
+
+    <bottom>
+
+        <HBox spacing="12"
+              alignment="CENTER_RIGHT">
+
+            <padding>
+                <Insets top="20"
+                        right="25"
+                        bottom="25"
+                        left="25"/>
+            </padding>
+
+            <Button text="Add Registration"
+                    onAction="#onAddRegistrationClick"
+                    prefWidth="140"/>
+
+            <Button text="View Details"
+                    onAction="#onViewRegistrationClick"
+                    prefWidth="120"/>
+
+            <Button text="Cancel Registration"
+                    onAction="#onDeleteRegistrationClick"
+                    prefWidth="150"/>
+
+            <Button text="Back"
+                    onAction="#onBackClick"
+                    prefWidth="100"/>
+
+        </HBox>
+
+    </bottom>
+
+</BorderPane>
